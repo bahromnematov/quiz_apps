@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<QuizData> bialogiyaTest=BialogiyaQuizRepository.bialogiyaTest();
+  List testlar_bialogiya = BialogiyaQuizRepository.list;
 
   @override
   Widget build(BuildContext context) {
@@ -64,43 +64,42 @@ class _HomePageState extends State<HomePage> {
                   direction: 1,
                   questionsCount: 10,
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                      return QuizPage(quizList: bialogiyaTest, quizName: "Bialogiya");
+                    testlar_bialogiya.shuffle();
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return QuizPage(
+                          quizList: testlar_bialogiya[1],
+                          quizName: "Bialogiya");
                     }));
-                  }
-              ),
+                  }),
               SelectTestsItem(
                   subjectName: "Englesh",
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.blueBar,
                   direction: 1,
                   questionsCount: 10,
-                  onTap: () {}
-              ),
+                  onTap: () {}),
               SelectTestsItem(
                   subjectName: "Matematika",
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.greenBar,
                   direction: 1,
                   questionsCount: 10,
-                  onTap: () {}
-              ),
+                  onTap: () {}),
               SelectTestsItem(
                   subjectName: "Sport",
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.redBar,
                   direction: 1,
                   questionsCount: 10,
-                  onTap: () {}
-              ),
+                  onTap: () {}),
               SelectTestsItem(
                   subjectName: "Sciens",
                   iconPath: MyIcons.bookStack,
                   gradientColors: MyColors.purpleBar,
                   direction: 1,
                   questionsCount: 10,
-                  onTap: () {}
-              ),
+                  onTap: () {}),
             ],
           ),
         ),

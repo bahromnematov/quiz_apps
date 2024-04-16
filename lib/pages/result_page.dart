@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:quiz_apps/model/quiz_data.dart';
 
 import '../widgets/result_item.dart';
 
@@ -8,11 +9,15 @@ class ResultPage extends StatefulWidget {
   final int trueQuestionCount;
   final List<bool> answers;
   final double pracents;
+  final List<QuizData> Questins;
+  final List<String> selectedVariant;
 
   const ResultPage(
       {super.key,
+      required this.Questins,
       required this.toatalQuestionCount,
       required this.trueQuestionCount,
+      required this.selectedVariant,
       required this.answers,
       required this.pracents});
 
@@ -74,8 +79,10 @@ class _ResultPageState extends State<ResultPage> {
                       return Padding(
                         padding: EdgeInsets.all(10),
                         child: ResultItem(
-                          text: 'Question ${index + 1}',
+                          text: widget.Questins[index].quiztext,
                           isTrue: widget.answers[index],
+                          trueAnswers: widget.Questins[index].trueAnswer,
+                          selected_variant: widget.selectedVariant[index],
                         ),
                       );
                     },

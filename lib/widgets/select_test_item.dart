@@ -25,7 +25,7 @@ class SelectTestsItem extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.only(top: 25),
             padding: EdgeInsets.all(22),
-            height: MediaQuery.of(context).size.height * 0.185,
+            height: MediaQuery.of(context).size.height * 0.2,
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: gradientColors),
                 borderRadius: BorderRadius.circular(16)),

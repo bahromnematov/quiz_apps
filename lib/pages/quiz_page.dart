@@ -23,7 +23,7 @@ class _QuizPageState extends State<QuizPage> {
   String selectedVariant = "";
   List<bool> choseAnswers = [];
   int trueQuistionCount = 0;
-
+  List<String> selected_variant = [];
 
   @override
   Widget build(BuildContext context) {
@@ -135,6 +135,7 @@ class _QuizPageState extends State<QuizPage> {
                                 expendetValue++;
                                 currentQuistionIndex++;
                                 selectedVariant = "";
+                                selected_variant.add(selectedVariant);
                               });
                               _controller.restart();
                             }
@@ -175,6 +176,7 @@ class _QuizPageState extends State<QuizPage> {
                           onTap: () {
                             setState(() {
                               selectedVariant = "A";
+                              selected_variant.add(selectedVariant);
                             });
                           }),
                       SizedBox(
@@ -186,6 +188,7 @@ class _QuizPageState extends State<QuizPage> {
                           onTap: () {
                             setState(() {
                               selectedVariant = "B";
+                              selected_variant.add(selectedVariant);
                             });
                           }),
                       SizedBox(
@@ -197,6 +200,7 @@ class _QuizPageState extends State<QuizPage> {
                           onTap: () {
                             setState(() {
                               selectedVariant = "C";
+                              selected_variant.add(selectedVariant);
                             });
                           }),
                       SizedBox(
@@ -208,6 +212,7 @@ class _QuizPageState extends State<QuizPage> {
                           onTap: () {
                             setState(() {
                               selectedVariant = "D";
+                              selected_variant.add(selectedVariant);
                             });
                           }),
                     ],
@@ -243,11 +248,9 @@ class _QuizPageState extends State<QuizPage> {
                             if (selectedVariant ==
                                 widget.quizList[currentQuistionIndex]
                                     .trueAnswer) {
-                              duration+=1;
                               choseAnswers.add(true);
                               trueQuistionCount += 1;
                             } else {
-                              duration-=4;
                               choseAnswers.add(false);
                             }
                             currentQuistionIndex++;
@@ -273,6 +276,8 @@ class _QuizPageState extends State<QuizPage> {
                                 pracents: trueQuistionCount /
                                     widget.quizList.length *
                                     100,
+                                Questins: widget.quizList,
+                                selectedVariant: selected_variant,
                               );
                             }));
                           }

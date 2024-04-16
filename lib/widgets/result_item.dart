@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 
 class ResultItem extends StatelessWidget {
   final String text;
+  final String trueAnswers;
+  final String selected_variant;
   final bool isTrue;
 
-  const ResultItem({super.key, required this.text, required this.isTrue});
+  const ResultItem(
+      {super.key,
+      required this.text,
+      required this.isTrue,
+      required this.selected_variant,
+      required this.trueAnswers});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +27,29 @@ class ResultItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: Text(
-              text,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                text,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "True Answers: $trueAnswers",
+                style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Selected Variant: $selected_variant",
+                style: TextStyle(
+                    color: isTrue ? Colors.green : Colors.red,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          )),
           isTrue
               ? Image.asset(
                   "assets/images/checked.png",
