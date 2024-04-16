@@ -1,16 +1,13 @@
 # quiz_apps
+Pages:
 
-A new Flutter project.
+SplashPage
 
-## Getting Started
+HomePage
 
-This project is a starting point for a Flutter application.
+QuizPage
 
-A few resources to get you started if this is your first Flutter project:
+ResultPage
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Quiz Screen](https://github.com/bahromnematov/quiz_apps/assets/89692061/5ff2d636-4c2f-4b64-97ae-553829f2f968)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
