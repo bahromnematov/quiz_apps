@@ -6,8 +6,6 @@ import 'package:quiz_apps/utils/colors.dart';
 import 'package:quiz_apps/utils/icons.dart';
 import 'package:quiz_apps/widgets/select_test_item.dart';
 
-import '../model/quiz_data.dart';
-
 class HomePage extends StatefulWidget {
   static final String id = "myQuiz";
 
